@@ -289,7 +289,27 @@ document.getElementById('menu-btn').addEventListener('click', () => {
 });
 
 document.getElementById('donate-btn').addEventListener('click', () => {
-  alert('Apoio via PIX em breve! Coloque sua chave PIX no código.');
+  document.getElementById('donate-modal').classList.add('active');
+});
+
+document.getElementById('close-modal').addEventListener('click', () => {
+  document.getElementById('donate-modal').classList.remove('active');
+});
+
+document.getElementById('donate-modal').addEventListener('click', e => {
+  if (e.target.id === 'donate-modal') {
+    document.getElementById('donate-modal').classList.remove('active');
+  }
+});
+
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.target);
+    navigator.clipboard.writeText(target.textContent).then(() => {
+      btn.textContent = 'Copiado!';
+      setTimeout(() => btn.textContent = 'Copiar', 1500);
+    });
+  });
 });
 
 loadBestScore();

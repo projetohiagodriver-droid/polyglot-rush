@@ -80,9 +80,38 @@
     <footer>
       <p>Feito com 🧠 e muitos idiomas.</p>
       <div class="support">
-        <button id="donate-btn">☕ Apoiar</button>
+        <button id="donate-btn">☕ Apoiar o projeto</button>
       </div>
     </footer>
+
+    <div id="donate-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <h3>Apoie o Polyglot Rush</h3>
+        <p>Sua contribuição ajuda a adicionar mais idiomas, modos e funcionalidades.</p>
+        <div class="donate-options">
+          <div class="donate-option">
+            <strong>PIX (Brasil)</strong>
+            <code id="pix-key">[sua chave PIX aqui]</code>
+            <button class="copy-btn" data-target="pix-key">Copiar</button>
+          </div>
+          <div class="donate-option">
+            <strong>Bitcoin</strong>
+            <code id="btc-key">[endereço BTC aqui]</code>
+            <button class="copy-btn" data-target="btc-key">Copiar</button>
+          </div>
+          <div class="donate-option">
+            <strong>Ethereum / ERC-20</strong>
+            <code id="eth-key">[endereço ETH aqui]</code>
+            <button class="copy-btn" data-target="eth-key">Copiar</button>
+          </div>
+          <div class="donate-option">
+            <strong>Ko-fi</strong>
+            <a href="#" id="kofi-link" target="_blank">ko-fi.com/[seu perfil]</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="game.js"></script>
