@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polyglot Rush — Speedrun de Tradução</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <header class="hero">
+      <h1>🌍 Polyglot Rush</h1>
+      <p>Speedrun de tradução multilíngue. Quão rápido você é?</p>
+    </header>
+
+    <main>
+      <section id="menu" class="screen active">
+        <div class="card">
+          <h2>Escolha o modo</h2>
+          <div class="modes">
+            <button class="mode-btn" data-mode="easy">Fácil <span>60s</span></button>
+            <button class="mode-btn" data-mode="normal">Normal <span>60s</span></button>
+            <button class="mode-btn" data-mode="hard">Difícil <span>60s</span></button>
+          </div>
+          <div class="langs">
+            <label>Idiomas:</label>
+            <select id="lang-select" multiple>
+              <option value="en" selected>Inglês</option>
+              <option value="es" selected>Espanhol</option>
+              <option value="fr">Francês</option>
+              <option value="de">Alemão</option>
+              <option value="it">Italiano</option>
+              <option value="ja">Japonês</option>
+              <option value="ko">Coreano</option>
+              <option value="zh">Chinês</option>
+            </select>
+          </div>
+        </div>
+        <div class="stats">
+          <h3>🏆 Melhor pontuação</h3>
+          <p id="best-score">0 pts</p>
+        </div>
+      </section>
+
+      <section id="game" class="screen">
+        <div class="hud">
+          <div class="timer">⏱️ <span id="time">60</span>s</div>
+          <div class="score">⭐ <span id="score">0</span></div>
+          <div class="streak">🔥 <span id="streak">0</span></div>
+        </div>
+
+        <div class="card game-card">
+          <div class="phrase-lang" id="phrase-lang">Inglês</div>
+          <div class="phrase" id="phrase">The quick brown fox jumps over the lazy dog.</div>
+          <input type="text" id="answer" placeholder="Digite a tradução em português..." autocomplete="off">
+          <div class="feedback" id="feedback"></div>
+          <button id="skip-btn">Pular (-5s)</button>
+        </div>
+      </section>
+
+      <section id="result" class="screen">
+        <div class="card">
+          <h2>Fim de jogo!</h2>
+          <div class="final-score">
+            <span id="final-score">0</span> pts
+          </div>
+          <div class="breakdown">
+            <p>Acertos: <span id="correct-count">0</span></p>
+            <p>Erros: <span id="wrong-count">0</span></p>
+            <p>Maior sequência: <span id="best-streak">0</span></p>
+          </div>
+          <button id="restart-btn">Jogar novamente</button>
+          <button id="menu-btn">Menu</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Feito com 🧠 e muitos idiomas.</p>
+      <div class="support">
+        <button id="donate-btn">☕ Apoiar</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
