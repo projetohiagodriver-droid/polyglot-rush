@@ -6,19 +6,33 @@ const PHRASES = {
       { text: 'The cat is sleeping.', answer: 'o gato está dormindo' },
       { text: 'I love pizza.', answer: 'eu amo pizza' },
       { text: 'Today is sunny.', answer: 'hoje está ensolarado' },
-      { text: 'Where is the bathroom?', answer: 'onde fica o banheiro' }
+      { text: 'Where is the bathroom?', answer: 'onde fica o banheiro' },
+      { text: 'Good morning!', answer: 'bom dia' },
+      { text: 'Thank you very much.', answer: 'muito obrigado' },
+      { text: 'I am learning Portuguese.', answer: 'eu estou aprendendo português' },
+      { text: 'Do you speak English?', answer: 'você fala inglês' },
+      { text: 'See you tomorrow.', answer: 'até amanhã' }
     ],
     normal: [
       { text: 'The quick brown fox jumps over the lazy dog.', answer: 'a rápida raposa marrom pula sobre o cachorro preguiçoso' },
       { text: 'Time flies when you are having fun.', answer: 'o tempo voa quando você está se divertindo' },
       { text: 'Every cloud has a silver lining.', answer: 'toda nuvem tem um lado bom' },
       { text: 'Better late than never.', answer: 'antes tarde do que nunca' },
-      { text: 'Actions speak louder than words.', answer: 'as ações falam mais alto que as palavras' }
+      { text: 'Actions speak louder than words.', answer: 'as ações falam mais alto que as palavras' },
+      { text: 'A friend in need is a friend indeed.', answer: 'um amigo na necessidade é um amigo de verdade' },
+      { text: 'Do not count your chickens before they hatch.', answer: 'não conte com o ovo na cesta da galinha' },
+      { text: 'The early bird catches the worm.', answer: 'o pássaro que acorda cedo pega a minhoca' },
+      { text: 'Practice makes perfect.', answer: 'a prática leva à perfeição' },
+      { text: 'When in Rome, do as the Romans do.', answer: 'em roma, faça como os romanos' }
     ],
     hard: [
       { text: 'The intricacies of quantum mechanics baffle even seasoned physicists.', answer: 'as complexidades da mecânica quântica confundem até físicos experientes' },
       { text: 'A procrastinator is someone who postpones the inevitable.', answer: 'um procrastinador é alguém que adia o inevitável' },
-      { text: 'Serendipity often leads to the most profound discoveries.', answer: 'a serendipidade frequentemente leva às descobertas mais profundas' }
+      { text: 'Serendipity often leads to the most profound discoveries.', answer: 'a serendipidade frequentemente leva às descobertas mais profundas' },
+      { text: 'The ephemeral nature of fame makes it a fickle companion.', answer: 'a natureza efêmera da fama a torna uma companheira inconstante' },
+      { text: 'Her erudition was evident in every meticulously crafted sentence.', answer: 'a sua erudição era evidente em cada frase meticulosamente elaborada' },
+      { text: 'The negotiations reached an impasse due to irreconcilable differences.', answer: 'as negociações chegaram a um impasse devido a diferenças irreconciliáveis' },
+      { text: 'A confluence of factors precipitated the economic downturn.', answer: 'uma confluência de fatores precipitou a recessão econômica' }
     ]
   },
   es: {
@@ -26,12 +40,19 @@ const PHRASES = {
     easy: [
       { text: 'Hola, ¿cómo estás?', answer: 'olá, como você está' },
       { text: 'El gato duerme mucho.', answer: 'o gato dorme muito' },
-      { text: 'Me gusta el chocolate.', answer: 'eu gosto de chocolate' }
+      { text: 'Me gusta el chocolate.', answer: 'eu gosto de chocolate' },
+      { text: 'Buenos días.', answer: 'bom dia' },
+      { text: 'Muchas gracias.', answer: 'muito obrigado' },
+      { text: '¿Dónde está la biblioteca?', answer: 'onde fica a biblioteca' },
+      { text: 'Hasta luego.', answer: 'até logo' }
     ],
     normal: [
       { text: 'No hay mal que por bien no venga.', answer: 'não há mal que não traga algum bem' },
       { text: 'Más vale tarde que nunca.', answer: 'antes tarde do que nunca' },
-      { text: 'En boca cerrada no entran moscas.', answer: 'em boca fechada não entra mosca' }
+      { text: 'En boca cerrada no entran moscas.', answer: 'em boca fechada não entra mosca' },
+      { text: 'El que mucho abarca, poco aprieta.', answer: 'quem muito abarca pouco aperta' },
+      { text: 'A quien madruga, Dios le ayuda.', answer: 'a quem cedo madruga deus ajuda' },
+      { text: 'Poco a poco se llega lejos.', answer: 'pouco a pouco se chega longe' }
     ],
     hard: [
       { text: 'La perseverance es la clave del éxito duradero.', answer: 'a perseverança é a chave do sucesso duradouro' },
@@ -314,3 +335,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
 
 loadBestScore();
 showScreen('menu');
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(console.error);
+}
